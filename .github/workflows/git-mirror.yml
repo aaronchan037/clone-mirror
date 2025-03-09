@@ -11,13 +11,17 @@ jobs:
     name: Git Clone and Push
     runs-on: ubuntu-latest
     steps:
+      - name: Setup
+        run: mkdir -p /workspace
       - name: lazyvim
         run: |
+          cd /workspace
           git clone https://github.com/LazyVim/LazyVim.git lazyvim
           cd lazyvim
           git push -f https://clonegege:${{ secrets.GITEE_TOKEN }}@gitee.com/clonegege/lazyvim
       - name: lazy.nvim
         run: |
+          cd /workspace
           git clone https://github.com/folke/lazy.nvim.git lazynvim
           cd lazynvim
           git push -f https://clonegege:${{ secrets.GITEE_TOKEN }}@gitee.com/clonegege/lazy.nvim
