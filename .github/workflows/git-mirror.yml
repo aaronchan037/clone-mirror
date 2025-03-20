@@ -14,8 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup
-        run: |
-          mkdir -p ./workspace
+        run: mkdir -p ./workspace
       - name: lazyvim
         run: |
           git clone https://github.com/LazyVim/LazyVim.git lazyvim
